@@ -1,0 +1,127 @@
+[
+    {
+        "_id": "00000002a",
+        "brand": "Pirate",
+        "prescription_L": 2.5,
+        "prescription_R": 2,
+        "color_L": null,
+        "color_R": null,
+        "frame": "M",
+        "frame_color": "silver",
+        "price": 120.00,
+        "supplier": {
+            "name": "Gafas Pepito",
+            "phone": "43562457",
+            "fax": null,
+            "nif": "34647824X",
+            "address": {
+                "street": "calle remedios",
+                "street_num": 23,
+                "floor": 3,
+                "door": null,
+                "city": "jaen",
+                "zip": "534575",
+                "country": "spain"
+            }
+        },
+        "sales": [
+            {
+                "total": 120.00,
+                "date": "2025-04-23 10:44",
+                "employee": "marcela",
+                "customer": {
+                    "_id": "00000001b",
+                    "name": "Florencio",
+                    "surname": "Flores",
+                    "phone": "34568735",
+                    "email": "florencio@mail.com",
+                    "creation_date": "2025-04-23 10:43",
+                    "recomended_by": "00000001a",
+                    "address": {
+                        "street": "calle penurias",
+                        "street_num": 12,
+                        "floor": 2,
+                        "door": "2ª",
+                        "city": "jaca",
+                        "zip": "53456",
+                        "country": "spain"
+                        }
+                }
+            },
+            {
+                "total": 120.00,
+                "date": "2025-04-22 12:54",
+                "employee": "antonia",
+                "customer": {
+                    "_id": "00000001a",
+                    "name": "Paquita",
+                    "surname": "Salas",
+                    "phone": "74829424",
+                    "email": "paquita@mail.com",
+                    "creation_date": "2025-04-22 12:43",
+                    "recomended_by": null,
+                    "address": {
+                        "street": "calle remedios",
+                        "street_num": 23,
+                        "floor": 3,
+                        "door": null,
+                        "city": "jaen",
+                        "zip": "534575",
+                        "country": "spain"
+                    }
+                }
+            }
+        ]
+    },
+
+    {
+        "brand": "SUNLight",
+        "prescription_L": null,
+        "prescription_R": null,
+        "color_L": "brown",
+        "color_R": "brown",
+        "frame": "P",
+        "frame_color": "brown",
+        "price": 45.00,
+        "supplier": {
+            "name": "Gafas Cool",
+            "phone": "98354457",
+            "fax": null,
+            "nif": "12347824Y",
+            "address": {
+                "street": "Poligono diferente",
+                "street_num": 3,
+                "floor": null,
+                "door": null,
+                "city": "murcia",
+                "zip": "12983",
+                "country": "spain"
+            }
+        },
+        "sales": [
+            {
+                "total": 45.00,
+                "date": "2025-04-23 10:44",
+                "employee": "marcela",
+                "customer": {
+                    "_id": "00000001b",
+                    "name": "Florencio",
+                    "surname": "Flores",
+                    "phone": "34568735",
+                    "email": "florencio@mail.com",
+                    "creation_date": "2025-04-23 10:43",
+                    "recomended_by": "00000001a",
+                    "address": {
+                        "street": "calle penurias",
+                        "street_num": 12,
+                        "floor": 2,
+                        "door": "2ª",
+                        "city": "jaca",
+                        "zip": "53456",
+                        "country": "spain"
+                        }
+                    }   
+            }
+        ]
+    }
+]
