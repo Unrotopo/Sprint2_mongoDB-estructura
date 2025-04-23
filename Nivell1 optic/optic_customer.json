@@ -1,0 +1,120 @@
+db.createCollection("customers", {
+    validator: {
+      $jsonSchema: {
+        "bsonType": "object",
+        "title": "customers",
+        "properties": {
+          "name": {
+            "bsonType": "string"
+          },
+          "address": {
+            "bsonType": "string"
+          },
+          "phone": {
+            "bsonType": "string"
+          },
+          "email": {
+            "bsonType": "string"
+          },
+          "registration_date": {
+            "bsonType": "timestamp"
+          },
+          "recomended_by": {
+            "bsonType": "string"
+          },
+          "shopping_cart": {
+            "bsonType": "array",
+            "items": {
+              "title": "object",
+              "properties": {
+                "glasses": {
+                  "bsonType": "array",
+                  "items": {
+                    "title": "object",
+                    "properties": {
+                      "brand": {
+                        "bsonType": "string"
+                      },
+                      "prescription_L": {
+                        "bsonType": "double"
+                      },
+                      "prescription_R": {
+                        "bsonType": "double"
+                      },
+                      "glass_color_L": {
+                        "bsonType": "string"
+                      },
+                      "glass_color_R": {
+                        "bsonType": "string"
+                      },
+                      "frame": {
+                        "enum": "P" = Plastic "M" = Metallic "F" = Floating
+                      },
+                      "frame_color": {
+                        "bsonType": "string"
+                      },
+                      "supplier": {
+                        "bsonType": "object",
+                        "title": "object",
+                        "properties": {
+                          "name": {
+                            "bsonType": "string"
+                          },
+                          "address": {
+                            "bsonType": "object",
+                            "title": "object",
+                            "properties": {
+                              "street": {
+                                "bsonType": "string"
+                              },
+                              "street_num": {
+                                "bsonType": "string"
+                              },
+                              "floor": {
+                                "bsonType": "string"
+                              },
+                              "door": {
+                                "bsonType": "string"
+                              },
+                              "city": {
+                                "bsonType": "string"
+                              },
+                              "zip": {
+                                "bsonType": "string"
+                              },
+                              "country": {
+                                "bsonType": "string"
+                              }
+                            }
+                          },
+                          "phone": {
+                            "bsonType": "string"
+                          },
+                          "fax": {
+                            "bsonType": "string"
+                          },
+                          "nif": {
+                            "bsonType": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "total_price": {
+                  "bsonType": "decimal"
+                },
+                "employee": {
+                  "bsonType": "string"
+                },
+                "purchase_datetime": {
+                  "bsonType": "timestamp"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "autoIndexId": true
+  });

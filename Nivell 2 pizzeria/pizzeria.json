@@ -1,0 +1,173 @@
+db.createCollection("shop", {
+    validator: {
+      $jsonSchema: {
+        "bsonType": "object",
+        "title": "shop",
+        "properties": {
+          "address": {
+            "bsonType": "string"
+          },
+          "zip": {
+            "bsonType": "string"
+          },
+          "city": {
+            "bsonType": "string"
+          },
+          "region": {
+            "bsonType": "string"
+          },
+          "clients": {
+            "bsonType": "array",
+            "items": {
+              "title": "object",
+              "properties": {
+                "name": {
+                  "bsonType": "string"
+                },
+                "surname": {
+                  "bsonType": "string"
+                },
+                "address": {
+                  "bsonType": "string"
+                },
+                "zip": {
+                  "bsonType": "string"
+                },
+                "city": {
+                  "bsonType": "string"
+                },
+                "region": {
+                  "bsonType": "string"
+                },
+                "phone": {
+                  "bsonType": "string"
+                },
+                "orders": {
+                  "bsonType": "array",
+                  "items": {
+                    "title": "object",
+                    "properties": {
+                      "creation_date": {
+                        "bsonType": "timestamp"
+                      },
+                      "order_type": {
+                        "enum": "R" = Restaurant "T" = Take Away
+                      },
+                      "pizzas": {
+                        "bsonType": "array",
+                        "items": {
+                          "title": "object",
+                          "properties": {
+                            "name": {
+                              "bsonType": "string"
+                            },
+                            "description": {
+                              "bsonType": "string"
+                            },
+                            "picture": {
+                              "bsonType": "binData"
+                            },
+                            "amount": {
+                              "bsonType": "int"
+                            },
+                            "price": {
+                              "bsonType": "decimal"
+                            },
+                            "category": {
+                              "bsonType": "string"
+                            }
+                          }
+                        }
+                      },
+                      "burgers": {
+                        "bsonType": "array",
+                        "items": {
+                          "title": "object",
+                          "properties": {
+                            "name": {
+                              "bsonType": "string"
+                            },
+                            "description": {
+                              "bsonType": "string"
+                            },
+                            "picture": {
+                              "bsonType": "binData"
+                            },
+                            "amount": {
+                              "bsonType": "int"
+                            },
+                            "price": {
+                              "bsonType": "decimal"
+                            }
+                          }
+                        }
+                      },
+                      "drinks": {
+                        "bsonType": "array",
+                        "items": {
+                          "title": "object",
+                          "properties": {
+                            "name": {
+                              "bsonType": "string"
+                            },
+                            "description": {
+                              "bsonType": "string"
+                            },
+                            "picture": {
+                              "bsonType": "binData"
+                            },
+                            "amount": {
+                              "bsonType": "int"
+                            },
+                            "price": {
+                              "bsonType": "decimal"
+                            }
+                          }
+                        }
+                      },
+                      "total_price": {
+                        "bsonType": "decimal"
+                      },
+                      "comments": {
+                        "bsonType": "string"
+                      },
+                      "employee_delivery": {
+                        "bsonType": "string"
+                      },
+                      "delivery_time": {
+                        "bsonType": "timestamp"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "employees": {
+            "bsonType": "array",
+            "items": {
+              "title": "object",
+              "properties": {
+                "name": {
+                  "bsonType": "string"
+                },
+                "surname": {
+                  "bsonType": "string"
+                },
+                "nif": {
+                  "bsonType": "string"
+                },
+                "phone": {
+                  "bsonType": "string"
+                },
+                "position": {
+                  "enum": "C" = Cook "D" = Delivery
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "autoIndexId": true
+  });
