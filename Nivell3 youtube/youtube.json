@@ -1,0 +1,160 @@
+db.createCollection("videos", {
+    validator: {
+      $jsonSchema: {
+        "bsonType": "object",
+        "title": "videos",
+        "properties": {
+          "title": {
+            "bsonType": "string"
+          },
+          "description": {
+            "bsonType": "string"
+          },
+          "size": {
+            "bsonType": "string"
+          },
+          "file_name": {
+            "bsonType": "string"
+          },
+          "thumbnail": {
+            "bsonType": "binData"
+          },
+          "num_reproductions": {
+            "bsonType": "int"
+          },
+          "num_likes": {
+            "bsonType": "int"
+          },
+          "num_dislikes": {
+            "bsonType": "int"
+          },
+          "published_by": {
+            "bsonType": "object",
+            "title": "object",
+            "properties": {
+              "email": {
+                "bsonType": "string"
+              },
+              "password": {
+                "bsonType": "string"
+              },
+              "user_name": {
+                "bsonType": "string"
+              },
+              "date_of_birth": {
+                "bsonType": "date"
+              },
+              "sex": {
+                "enum": "F" = Female "M" = Male "NB" = Non Binary
+              },
+              "country": {
+                "bsonType": "string"
+              },
+              "zip": {
+                "bsonType": "string"
+              },
+              "channels": {
+                "bsonType": "array",
+                "items": {
+                  "title": "object",
+                  "properties": {
+                    "name": {
+                      "bsonType": "string"
+                    },
+                    "description": {
+                      "bsonType": "string"
+                    },
+                    "creation_date": {
+                      "bsonType": "date"
+                    },
+                    "videos": {
+                      "bsonType": "array",
+                      "items": {
+                        "bsonType": "objectId"
+                      }
+                    }
+                  }
+                }
+              },
+              "subscribed_to": {
+                "bsonType": "array",
+                "items": {
+                  "bsonType": "objectId"
+                }
+              },
+              "playlists": {
+                "bsonType": "array",
+                "items": {
+                  "title": "object",
+                  "properties": {
+                    "name": {
+                      "bsonType": "string"
+                    },
+                    "creation_date": {
+                      "bsonType": "date"
+                    },
+                    "state": {
+                      "enum": "Pu" = Public "Pr" = Private
+                    },
+                    "videos": {
+                      "bsonType": "array",
+                      "items": {
+                        "bsonType": "objectId"
+                      }
+                    }
+                  }
+                }
+              },
+              "reacts_to_video": {
+                "bsonType": "array",
+                "items": {
+                  "title": "object",
+                  "properties": {
+                    "video": {
+                      "bsonType": "objectId"
+                    },
+                    "status": {
+                      "enum": "L" = Like "D" = Dislike
+                    },
+                    "reaction_time": {
+                      "bsonType": "timestamp"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "published_time": {
+            "bsonType": "timestamp"
+          },
+          "state": {
+            "enum": "Pu" = Public "H" = Hidden "Pr" = Private
+          },
+          "labels": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "string"
+            }
+          },
+          "comments": {
+            "bsonType": "array",
+            "items": {
+              "title": "object",
+              "properties": {
+                "text": {
+                  "bsonType": "string"
+                },
+                "creation_time": {
+                  "bsonType": "timestamp"
+                },
+                "published_by": {
+                  "bsonType": "objectId"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "autoIndexId": true
+  });
